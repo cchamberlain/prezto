@@ -8,6 +8,7 @@
 #   Isaac Wolkerstorfer <i@agnoster.net>
 #   Jeff Sandberg <paradox460@gmail.com>
 #   Sorin Ionescu <sorin.ionescu@gmail.com>
+#   Cole Chamberlain <cole.chamberlain@gmail.com>
 #
 # Screenshots:
 #   http://i.imgur.com/0XIWX.png
@@ -119,9 +120,10 @@ function prompt_paradox_setup {
 
   # Set editor-info parameters.
   zstyle ':prezto:module:editor:info:completing' format '%B%F{red}...%f%b'
-  zstyle ':prezto:module:editor:info:keymap:primary' format '%B%F{blue}❯%f%b'
+  zstyle ':prezto:module:editor:info:keymap:primary' format '%B%F{blue}❯%f%F{cyan}❯%f%F{green}❯%f%b'
+  # zstyle ':prezto:module:editor:info:keymap:primary:insert' format 'I'
   zstyle ':prezto:module:editor:info:keymap:primary:overwrite' format '%F{red}♺%f'
-  zstyle ':prezto:module:editor:info:keymap:alternate' format '%B%F{red}❮%f%b'
+  zstyle ':prezto:module:editor:info:keymap:alternate' format '%B%F{red}❮%f%F{red}❮%f%F{red}❮%f%b'
 
   # Set git-info parameters.
   zstyle ':prezto:module:git:info' verbose 'yes'
@@ -147,7 +149,7 @@ function prompt_paradox_setup {
   PROMPT='
 ${(e)$(prompt_paradox_build_prompt)}
  ${editor_info[keymap]} '
-  RPROMPT='%F{blue}[%F{green}%D{%H:%M:%S}%F{blue}]%f'
+  RPROMPT='%F{green}%D{%H:%M}%f'
   SPROMPT='zsh: correct %F{red}%R%f to %F{green}%r%f [nyae]? '
 }
 
